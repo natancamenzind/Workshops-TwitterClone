@@ -1,0 +1,13 @@
+{% extends "twitter/base.html" %}
+
+{% block content %}
+<h2>Messages list</h2>
+<ul>
+    {% for object in object_list %}
+    <li>
+        {{object}}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
