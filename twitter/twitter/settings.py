@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'twitter_entries',
     'twitter_messages',
     'twitter_users',
-
 ]
 
 MIDDLEWARE = [
