@@ -1,0 +1,35 @@
+{% extends 'twitter/base.html' %}
+
+{% block content %}
+
+    <h2>Lista wpisów:</h2>
+
+
+        {% for tweet in object_list %}
+
+     <div style="background-color: pink; border: 2px solid yellow">
+
+
+         {{ tweet.creation_date }}<br><br>
+            {{ tweet.user}}: &nbsp;
+            {{ tweet.content|upper }}
+
+
+     </div><br>
+
+
+        {% empty %}
+
+        BRAK WPISÓW
+
+        {% endfor %}
+
+<a class="link" href="/twitter_entries/add">Dodaj Tweet</a>
+
+
+
+
+
+
+
+{% endblock %}
