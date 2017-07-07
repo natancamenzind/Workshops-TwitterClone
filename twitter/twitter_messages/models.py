@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
-
+# from django.contrib.auth.models import User
+from django.conf import settings
 
 # Create your models here.
 class Message(models.Model):
@@ -8,8 +8,8 @@ class Message(models.Model):
 
     # TODO: Define fields here
     text = models.TextField(max_length=666)
-    sender = models.ForeignKey(to=User, related_name='messages_sent')
-    receiver = models.ForeignKey(to=User, related_name='messages_received')
+    sender = models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='messages_sent')
+    receiver = models.ForeignKey(to=settings.AUTH_USER_MODEL, related_name='messages_received')
     was_read = models.BooleanField(default=False)
 
     class Meta:
